@@ -1,0 +1,204 @@
+﻿@model BloodCareF.Models.Donation
+
+@{
+    ViewData["Title"] = "Edit Donation";
+}
+
+
+<div class="container mt-5">
+
+
+    <div class="row justify-content-center">
+
+
+        <div class="col-md-7">
+
+
+            <div class="card shadow border-0">
+
+
+                <div class="card-header bg-warning text-center">
+
+                    <h3>
+                        ✏️ Edit Donation
+                    </h3>
+
+                </div>
+
+
+
+                <div class="card-body">
+
+
+                    <form asp-action="Edit" method="post">
+
+
+                        <input type="hidden" asp-for="Id" />
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Donor
+                            </label>
+
+
+                            <select asp-for="DonorId"
+                                    class="form-select">
+
+
+                                @foreach (var item in ViewBag.Donor)
+                                {
+
+                                    if (item.ID == Model.DonorId)
+                                    {
+                                        <option value="@item.ID" selected>
+                                            @item.FullName
+                                        </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.ID">
+                                            @item.FullName
+                                        </option>
+                                    }
+
+                                }
+
+
+                            </select>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Patient
+                            </label>
+
+
+                            <select asp-for="PAtientId"
+                                    class="form-select">
+
+
+                                @foreach (var item in ViewBag.Patient)
+                                {
+
+                                    if (item.Id == Model.PAtientId)
+                                    {
+                                        <option value="@item.Id" selected>
+                                            @item.FullName
+                                        </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Id">
+                                            @item.FullName
+                                        </option>
+                                    }
+
+                                }
+
+
+                            </select>
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Quantity
+                            </label>
+
+
+                            <input asp-for="Quantity"
+                                   class="form-control" />
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Donation Date
+                            </label>
+
+
+                            <input asp-for="DonationDate"
+                                   type="date"
+                                   class="form-control" />
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="text-center mt-4">
+
+
+                            <button type="submit"
+                                    class="btn btn-warning px-5">
+
+                                Save Changes
+
+                            </button>
+
+
+
+
+                            <a asp-action="ShowDonation"
+                               class="btn btn-secondary ms-2">
+
+                                Back
+
+                            </a>
+
+
+                        </div>
+
+
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

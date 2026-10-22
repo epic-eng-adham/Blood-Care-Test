@@ -1,0 +1,279 @@
+﻿@model BloodCareF.Models.Donor
+
+@{
+    ViewData["Title"] = "Edit Donor";
+}
+
+
+<div class="container mt-5">
+
+
+    <div class="row justify-content-center">
+
+
+        <div class="col-md-8">
+
+
+            <div class="card shadow border-0">
+
+
+                <div class="card-header bg-warning text-center">
+
+                    <h3 class="mb-0">
+                        ✏️ Edit Donor
+                    </h3>
+
+                </div>
+
+
+
+                <div class="card-body">
+
+
+                    <form asp-action="Edit" method="post">
+
+
+                        <input type="hidden" asp-for="ID" />
+
+
+
+                        <div class="row">
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-bold">
+                                    Full Name
+                                </label>
+
+                                <input asp-for="FullName"
+                                       class="form-control" />
+
+                            </div>
+
+
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-bold">
+                                    Age
+                                </label>
+
+                                <input asp-for="Age"
+                                       class="form-control" />
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+                        <div class="row">
+
+
+                            <div class="col-md-6 mb-3">
+
+
+                                <label class="form-label fw-bold">
+                                    Blood Type
+                                </label>
+
+
+
+                                <select asp-for="BloodTypeId"
+                                        class="form-select">
+
+
+                                    @foreach (var item in ViewBag.BloodType)
+                                    {
+
+                                        if (item.Id == Model.BloodTypeId)
+                                        {
+                                            <option value="@item.Id" selected>
+                                                @item.TypeName
+                                            </option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@item.Id">
+                                                @item.TypeName
+                                            </option>
+                                        }
+
+                                    }
+
+
+                                </select>
+
+
+                            </div>
+
+
+
+
+
+                            <div class="col-md-6 mb-3">
+
+
+                                <label class="form-label fw-bold">
+                                    Gender
+                                </label>
+
+
+                                <select asp-for="Gender"
+                                        class="form-select">
+
+
+                                    <option value="Male">
+                                        Male
+                                    </option>
+
+
+                                    <option value="Female">
+                                        Female
+                                    </option>
+
+
+                                </select>
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="row">
+
+
+                            <div class="col-md-6 mb-3">
+
+
+                                <label class="form-label fw-bold">
+                                    Phone
+                                </label>
+
+
+                                <input asp-for="Phone"
+                                       class="form-control" />
+
+
+                            </div>
+
+
+
+
+
+                            <div class="col-md-6 mb-3">
+
+
+                                <label class="form-label fw-bold">
+                                    Donation Quantity
+                                </label>
+
+
+                                <input asp-for="DonationQuantity"
+                                       class="form-control" />
+
+
+                            </div>
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Address
+                            </label>
+
+
+                            <textarea asp-for="Address"
+                                      class="form-control">
+                            </textarea>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Last Donation Date
+                            </label>
+
+
+                            <input asp-for="LastDonationDate"
+                                   type="date"
+                                   class="form-control" />
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="text-center mt-4">
+
+
+                            <button type="submit"
+                                    class="btn btn-warning px-5">
+
+                                Save Changes
+
+                            </button>
+
+
+
+
+                            <a asp-action="ShowDonor"
+                               class="btn btn-secondary ms-2">
+
+                                Back
+
+                            </a>
+
+
+                        </div>
+
+
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

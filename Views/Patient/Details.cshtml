@@ -1,0 +1,128 @@
+﻿@model BloodCareF.Models.Patient
+
+@{
+    ViewData["Title"] = "Patient Details";
+}
+
+
+<div class="container mt-5">
+
+
+    <div class="row justify-content-center">
+
+
+        <div class="col-md-6">
+
+
+            <div class="card shadow border-0">
+
+
+                <div class="card-header bg-danger text-white text-center">
+
+                    <h3>
+                        🏥 Patient Details
+                    </h3>
+
+                </div>
+
+
+
+
+                <div class="card-body text-center">
+
+
+                    <h2 class="fw-bold mb-3">
+                        @Model.FullName
+                    </h2>
+
+
+                    <span class="badge bg-danger fs-5 mb-4">
+
+                        @Model.BloodType.TypeName
+
+                    </span>
+
+
+
+
+                    <hr />
+
+
+
+
+                    <div class="text-start">
+
+
+                        <p>
+                            <strong>Age:</strong>
+                            @Model.Age
+                        </p>
+
+
+
+                        <p>
+                            <strong>Gender:</strong>
+                            @Model.Gender
+                        </p>
+
+
+
+                        <p>
+                            <strong>Phone:</strong>
+                            @Model.Phone
+                        </p>
+
+
+
+                        <p>
+                            <strong>Address:</strong>
+                            @Model.Address
+                        </p>
+
+
+                    </div>
+
+
+
+
+
+
+                    <div class="mt-4">
+
+
+                        <a asp-action="Edit"
+                           asp-route-id="@Model.Id"
+                           class="btn btn-warning">
+
+                            Edit
+
+                        </a>
+
+
+
+
+                        <a asp-action="ShowPatient"
+                           class="btn btn-secondary ms-2">
+
+                            Back
+
+                        </a>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

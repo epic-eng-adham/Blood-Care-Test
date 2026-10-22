@@ -1,0 +1,205 @@
+﻿@model BloodCareF.Models.BloodRequest
+
+@{
+    ViewData["Title"] = "Edit Blood Request";
+}
+
+
+<div class="container mt-5">
+
+
+    <div class="row justify-content-center">
+
+
+        <div class="col-md-7">
+
+
+            <div class="card shadow border-0">
+
+
+                <div class="card-header bg-warning text-center">
+
+                    <h3>
+                        ✏️ Edit Blood Request
+                    </h3>
+
+                </div>
+
+
+
+                <div class="card-body">
+
+
+                    <form asp-action="Edit" method="post">
+
+
+                        <input type="hidden" asp-for="Id" />
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Patient
+                            </label>
+
+
+                            <select asp-for="PatientId"
+                                    class="form-select">
+
+
+                                @foreach (var item in ViewBag.Patient)
+                                {
+
+                                    if (item.Id == Model.PatientId)
+                                    {
+                                        <option value="@item.Id" selected>
+                                            @item.FullName
+                                        </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Id">
+                                            @item.FullName
+                                        </option>
+                                    }
+
+                                }
+
+
+                            </select>
+
+
+                        </div>
+
+
+
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Blood Type
+                            </label>
+
+
+                            <select asp-for="BloodTypeId"
+                                    class="form-select">
+
+
+                                @foreach (var item in ViewBag.BloodType)
+                                {
+
+                                    if (item.Id == Model.BloodTypeId)
+                                    {
+                                        <option value="@item.Id" selected>
+                                            @item.TypeName
+                                        </option>
+                                    }
+                                    else
+                                    {
+                                        <option value="@item.Id">
+                                            @item.TypeName
+                                        </option>
+                                    }
+
+                                }
+
+
+                            </select>
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Quantity Needed
+                            </label>
+
+
+                            <input asp-for="QuantityNeeded"
+                                   class="form-control" />
+
+
+                        </div>
+
+
+
+
+
+
+
+                        <div class="mb-3">
+
+
+                            <label class="form-label fw-bold">
+                                Request Date
+                            </label>
+
+
+                            <input asp-for="RequestDate"
+                                   type="date"
+                                   class="form-control" />
+
+
+                        </div>
+
+
+
+
+
+
+
+
+                        <div class="text-center mt-4">
+
+
+                            <button type="submit"
+                                    class="btn btn-warning px-5">
+
+                                Save Changes
+
+                            </button>
+
+
+
+
+                            <a asp-action="ShowBloodRequest"
+                               class="btn btn-secondary ms-2">
+
+                                Back
+
+                            </a>
+
+
+                        </div>
+
+
+
+                    </form>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

@@ -1,0 +1,199 @@
+﻿@model BloodCareF.Models.Donor
+
+@{
+    ViewData["Title"] = "Donor Details";
+}
+
+
+<div class="container mt-5">
+
+
+    <div class="row justify-content-center">
+
+
+        <div class="col-md-7">
+
+
+            <div class="card shadow border-0">
+
+
+                <div class="card-header bg-danger text-white text-center">
+
+                    <h3 class="mb-0">
+                        🩸 Donor Details
+                    </h3>
+
+                </div>
+
+
+
+
+                <div class="card-body">
+
+
+
+                    <div class="text-center mb-4">
+
+                        <h2 class="fw-bold">
+                            @Model.FullName
+                        </h2>
+
+
+                        <span class="badge bg-danger fs-5">
+
+                            @Model.BloodType.TypeName
+
+                        </span>
+
+                    </div>
+
+
+
+
+                    <hr />
+
+
+
+                    <div class="row">
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <h6 class="text-muted">
+                                Age
+                            </h6>
+
+                            <p class="fw-bold">
+                                @Model.Age
+                            </p>
+
+                        </div>
+
+
+
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <h6 class="text-muted">
+                                Gender
+                            </h6>
+
+                            <p class="fw-bold">
+                                @Model.Gender
+                            </p>
+
+                        </div>
+
+
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <h6 class="text-muted">
+                                Phone
+                            </h6>
+
+                            <p class="fw-bold">
+                                @Model.Phone
+                            </p>
+
+                        </div>
+
+
+
+
+
+                        <div class="col-md-6 mb-3">
+
+                            <h6 class="text-muted">
+                                Donation Quantity
+                            </h6>
+
+                            <p class="fw-bold">
+                                @Model.DonationQuantity
+                            </p>
+
+                        </div>
+
+
+
+
+                        <div class="col-md-12 mb-3">
+
+                            <h6 class="text-muted">
+                                Address
+                            </h6>
+
+                            <p class="fw-bold">
+                                @Model.Address
+                            </p>
+
+                        </div>
+
+
+
+
+                        <div class="col-md-12 mb-3">
+
+                            <h6 class="text-muted">
+                                Last Donation Date
+                            </h6>
+
+                            <p class="fw-bold">
+
+                                @(Model.LastDonationDate.HasValue
+                                                                ? Model.LastDonationDate.Value.ToString("yyyy-MM-dd")
+                                                                : "No Donation Yet")
+
+                            </p>
+
+                        </div>
+
+
+
+                    </div>
+
+
+
+
+
+                    <div class="text-center mt-3">
+
+
+                        <a asp-action="Edit"
+                           asp-route-id="@Model.ID"
+                           class="btn btn-warning px-4">
+
+                            Edit
+
+                        </a>
+
+
+
+
+                        <a asp-action="ShowDonor"
+                           class="btn btn-secondary px-4 ms-2">
+
+                            Back
+
+                        </a>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>

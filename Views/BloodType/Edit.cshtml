@@ -1,0 +1,50 @@
+﻿@model BloodCareF.Models.BloodType
+@{
+    ViewData["Title"] = "Edit Blood Type";
+}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow border-0">
+                <div class="card-header bg-danger text-white text-center">
+                    <h3 class="mb-0">
+                        🩸 Edit Blood Type
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Edit" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">
+                                Blood Type
+                            </label>
+                            <input asp-for="TypeName"
+                                   class="form-control"
+                                   readonly />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">
+                                Available Quantity
+                            </label>
+                            <input asp-for="AvailableQuantity"
+                                   class="form-control" />
+                            <span asp-validation-for="AvailableQuantity"
+                                  class="text-danger">
+                            </span>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit"
+                                    class="btn btn-warning px-5">
+                                Save
+                            </button>
+                            <a asp-action="ShowBloodTypes"
+                               class="btn btn-secondary ms-2">
+                                Back
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

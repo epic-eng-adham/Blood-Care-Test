@@ -1,0 +1,83 @@
+﻿@model List<BloodCareF.Models.BloodType>
+@{
+    ViewData["Title"] = "Blood Types";
+}
+<div class="container mt-5">
+    <div class="d-flex justify-content-center mb-4">
+        <h2 class="fw-bold">
+            🩸 Blood Types
+        </h2>
+    </div>
+    <div class="card shadow border-0">
+        <div class="card-body">
+            <table class="table table-hover align-middle">
+                <thead class="table-danger text-center">
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Blood Type
+                        </th>
+                        <th>
+                            Available Quantity
+                        </th>
+                        <th>
+                            Actions
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="text-center">
+                            <td>
+                                @item.Id
+                            </td>
+                            <td>
+                                <span class="badge bg-danger fs-5">
+                                    @item.TypeName
+                                </span>
+                            </td>
+                            <td>
+                                @item.AvailableQuantity
+                            </td>
+                            <td>
+                                <a asp-action="Edit"
+                                   asp-route-id="@item.Id"
+                                   class="btn btn-warning btn-sm">
+                                    Edit
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="text-center mt-5 mb-4">
+        <a asp-controller="Home"
+           asp-action="Index"
+           class="home-btn">
+            🏠 Back To Home
+        </a>
+    </div>
+</div>
+<style>
+    .home-btn {
+        display: inline-block;
+        padding: 12px 35px;
+        background: linear-gradient(135deg,#991b1b,#dc2626);
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: 700;
+        border-radius: 30px;
+        box-shadow: 0 10px 25px rgba(220,38,38,.3);
+        transition: .3s;
+    }
+        .home-btn:hover {
+            transform: translateY(-5px);
+            color: white;
+        }
+</style>

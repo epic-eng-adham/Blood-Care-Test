@@ -1,0 +1,134 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="container">
+    <div class="hero text-center">
+        <h1 class="title">
+            🩸 Blood Care System
+        </h1>
+        <p>
+            Manage blood donations, donors, patients and blood requests easily
+        </p>
+    </div>
+    <div class="row justify-content-center g-4 mt-5">
+        <div class="col-md-3 col-sm-6">
+            <a asp-controller="BloodRequest"
+               asp-action="ShowBloodRequest"
+               class="card-btn request">
+                <span>📝</span>
+                <h3>
+                    Blood Requests
+                </h3>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <a asp-controller="Donation"
+               asp-action="ShowDonation"
+               class="card-btn donation">
+                <span>💉</span>
+                <h3>
+                    Donations
+                </h3>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <a asp-controller="Donor"
+               asp-action="ShowDonor"
+               class="card-btn donor">
+                <span>🤝</span>
+                <h3>
+                    Donors
+                </h3>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <a asp-controller="Patient"
+               asp-action="ShowPatient"
+               class="card-btn patient">
+                <span>🧑‍⚕️</span>
+                <h3>
+                    Patients
+                </h3>
+            </a>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <a asp-controller="BloodType"
+               asp-action="ShowBloodTypes"
+               class="card-btn blood">
+                <span>🩸</span>
+                <h3>
+                    Blood Types
+                </h3>
+            </a>
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        min-height: 100vh;
+        background: linear-gradient( 135deg, #fee2e2, #ffffff );
+    }
+    .hero {
+        padding-top: 70px;
+    }
+    .title {
+        font-size: 55px;
+        font-weight: 900;
+        color: #991b1b;
+        letter-spacing: 1px;
+    }
+    .hero p {
+        margin-top: 20px;
+        color: #475569;
+        font-size: 20px;
+    }
+    .card-btn {
+        height: 190px;
+        background: white;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: #1f2937;
+        box-shadow: 0 15px 35px rgba(0,0,0,.12);
+        transition: .35s;
+    }
+    .card-btn span {
+            font-size: 55px;
+            margin-bottom: 15px;
+            transition: .35s;
+        }
+        .card-btn h3 {
+            font-size: 23px;
+            font-weight: 800;
+        }
+        .card-btn:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,.18);
+        }
+            .card-btn:hover span {
+                transform: scale(1.15);
+            }
+    .request {
+        border-top: 10px solid #2563eb; /* Blue */
+    }
+    .donation {
+        border-top: 10px solid #f59e0b; /* Orange */
+    }
+    .donor {
+        border-top: 10px solid #16a34a; /* Green */
+    }
+    .patient {
+        border-top: 10px solid #9333ea; /* Purple */
+    }
+    .blood {
+        border-top: 10px solid #dc2626; /* Red */
+    }
+    @@media(max-width:768px) {
+        .title {
+            font-size: 38px;
+        }
+    }
+</style>
