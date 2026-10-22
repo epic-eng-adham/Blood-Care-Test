@@ -21,4 +21,4 @@ A web application developed to manage blood bank data and blood donation request
 Academic project developed individually.
 
 ## Author
-Adham Mohamed Ali
+Epic-Eng-Adham
